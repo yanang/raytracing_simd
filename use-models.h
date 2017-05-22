@@ -1,0 +1,9 @@
+#include "models.inc"
+append_light(&light1, &lights);
+append_light(&light2, &lights);
+append_sphere(&sphere1, &spheres);
+append_sphere(&sphere2, &spheres);
+append_sphere(&sphere3, &spheres);
+append_rectangular(&rectangular1, &rectangulars);
+append_rectangular(&rectangular2, &rectangulars);
+append_rectangular(&rectangular3, &rectangulars);
