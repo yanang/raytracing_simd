@@ -336,9 +336,9 @@ static void rayConstruction(point3v *d, const point3v *u, const point3v *v,
     }
     __m256d v_s =_mm256_loadu_pd(temp);
     /* s = e + u_s * u + v_s * v + w_s * w */
-    mmultiply_vectors(u, &u_s, &u_tmp);
-    mmultiply_vectors(v, &v_s, &v_tmp);
-    mmultiply_vectors(w, &w_s, &w_tmp);
+    m_multiply_vector(u, u_s, &u_tmp);
+    m_multiply_vector(v, v_s, &v_tmp);
+    m_multiply_vector(w, w_s, &w_tmp);
     point3v vrp;
     COPY_POINT3v(&vrp,view->vrp);
     madd_vector(&vrp, &u_tmp, &s);
