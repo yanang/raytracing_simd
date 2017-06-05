@@ -6,11 +6,11 @@
 #include <assert.h>
 #include <immintrin.h>
 
-typedef struct _point3v{
+typedef struct _point3v {
     __m256d x;
     __m256d y;
     __m256d z;
-}point3v;
+} point3v;
 
 __attribute__((always_inline)) static inline
 void madd_vector(const point3v *a, const point3v *b, point3v *out)
@@ -102,7 +102,7 @@ __m256d mlength(const point3v *in)
 
 __attribute__((always_inline)) static inline
 void mscalar_triple_product(const point3v *u, const point3v *v, const point3v *w,
-                           point3v *out)
+                            point3v *out)
 {
     mcross_product(v, w, out);
     mmultiply_vectors(u, out, out);
